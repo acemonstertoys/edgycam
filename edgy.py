@@ -1,5 +1,9 @@
+import time
 import cv2
 import numpy as np
+from escpos.exceptions import USBNotFoundError
+from escpos.printer import Usb
+
 
 ## Event Name String - This will be on each printout. You can leave it blank if you like
 EVENT_PRINT_STRING = "East Bay Mini Maker Faire 2019\n"
@@ -10,9 +14,13 @@ PRINTER_VENDOR_ID = 0x0471
 PRINTER_PRODUCT_ID = 0x0055
 
 ## Initalize the printer
-## TODO - Catch exception and put it a loop so will work if printer not turned on first.
-from escpos.printer import Usb
-p = Usb(PRINTER_VENDOR_ID, PRINTER_PRODUCT_ID, 0, 0x82,0x02)
+while True:
+	try:
+		p = Usb(PRINTER_VENDOR_ID, PRINTER_PRODUCT_ID, 0, 0x82,0x02)
+		break
+	except USBNotFoundError:
+		print("Turn on the printer!")
+		time.sleep(3)
 
 ## Initalize the video camera and openCV
 cap = cv2.VideoCapture(0)
@@ -38,7 +46,7 @@ while True:
 
         cv2.imshow('window', img)
         
-        c = cv2.waitKey(1)
+        c = cv2.waitKey(10) # Loop every 10 ms. If timeout, return val is -1.
         
         if 'X' == chr(c & 255):  #if the keypress is "X", bail out and quit the program
             break
