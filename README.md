@@ -19,3 +19,10 @@ escpos = 2.2.0
 
 numpy = 1.12.1
 
+Camera default parameters in openCV for Microsoft HD USB Camera
+CAP_PROP_FRAME_WIDTH = 640
+CAP_PROP_FRAME_HEIGHT = 480
+CAP_PROP_FPS = 30
+CAP_PROP_FORMAT = 16
+CAP_PROP_CONTRAST = 0.5
+CAP_PROP_EXPOSURE = inf
