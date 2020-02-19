@@ -7,7 +7,7 @@ from escpos.exceptions import USBNotFoundError
 from escpos.printer import Usb
 
 ## Event Name String - This will be on each printout. You can leave it blank if you like
-EVENT_PRINT_STRING = "East Bay Mini Maker Faire 2019\n"
+EVENT_PRINT_STRING = "Ace Monster Toys Pi Day 2020\n"
 #EVENT_PRINT_STRING = "\n"
 
 ## USB IDs for our receipt printer. You can get these using the lsusb command
