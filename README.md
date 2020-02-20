@@ -26,3 +26,6 @@ CAP_PROP_FPS = 30
 CAP_PROP_FORMAT = 16
 CAP_PROP_CONTRAST = 0.5
 CAP_PROP_EXPOSURE = inf
+
+Program autostarts on boot using /home/pi/.config/autostart/edgy.desktop file
+

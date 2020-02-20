@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=EdgyCam
+Exec=xterm -hold -e 'sudo /usr/bin/python3 /home/pi/edgy.py'
